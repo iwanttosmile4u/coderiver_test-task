@@ -4,6 +4,7 @@
 .body {
   &__sidebar {
     width: 255px;
+    min-height: 100vh;
   }
 
   &__main {
@@ -84,6 +85,7 @@
 
   &__bottom-blocks {
     margin-top: 30px;
+    margin-bottom: 230px;
   }
 }
 
@@ -331,5 +333,52 @@
 
   &__item-amount {
     @include base-font-style($tableMainText, 600, 20px, $lightGreyTextColor);
+  }
+}
+
+.profile {
+  margin-bottom: 230px;
+  border: 1px solid $borderColor;
+  border-radius: 8px;
+  &__background {
+    position: relative;
+
+    @include universal-flex(flex, column, center, center);
+  }
+
+  &__background-image {
+    background-image: url("images/profile-background.png");
+    background-size: cover;
+    width: 100%;
+    min-height: 460px;
+  }
+
+  &__avatar {
+    height: 200px;
+    border: 4px solid #ffffff;
+    border-radius: 50%;
+    position: absolute;
+    top: 340px;
+  }
+
+  &__info {
+    margin: 90px auto 130px 50px;
+  }
+
+  &__info-title {
+    @include base-font-style(36px, 700, 45px, $mainDarkTextColor);
+    margin-bottom: 20px;
+  }
+
+  &__details {
+    @include base-font-style(16px, 500, 20px, $mainDarkTextColor);
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    &--link {
+      color: $brandColor;
+      text-decoration: underline;
+    }
   }
 }
