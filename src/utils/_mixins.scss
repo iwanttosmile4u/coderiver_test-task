@@ -1,0 +1,15 @@
+@import './variables';
+
+@mixin base-font-style($size, $weight, $line-height, $color) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $line-height;
+  color: $color;
+}
+
+@mixin universal-flex($display, $f-direction, $justify-content, $align-items) {
+  display: $display;
+  flex-direction: $f-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}

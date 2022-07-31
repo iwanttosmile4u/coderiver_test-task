@@ -1,3 +1,335 @@
-.starter {
-  font-size: 18px;
+@import './utils/variables';
+@import './utils/mixins';
+
+.body {
+  &__sidebar {
+    width: 255px;
+  }
+
+  &__main {
+    width: 100%;
+  }
+}
+
+.app {
+  @include universal-flex(flex, row, unset, unset);
+}
+
+.sidebar {
+  padding-top: 40px;
+  background-color: $sidebarBgr;
+
+  &__logo {
+    @include universal-flex(flex, row, center, center);
+  }
+
+  &__title {
+    @include base-font-style($secondaryHeader, 700, 24px, $sidebarTextColor);
+  }
+
+  &__img {
+    display: block;
+    margin-right: 12px;
+  }
+}
+
+.menu {
+  padding-top: 80px;
+
+  &__list {
+    list-style: none;
+  }
+
+  &__item {
+    padding: 18px 0 18px 30px;
+    transition: border-left 0.3s linear;
+
+    &:hover {
+      border-left: 3px solid $sidebarActiveTab;
+    }
+
+    &--active {
+      border-left: 3px solid $sidebarActiveTab;
+    }
+
+    &--bordered {
+      padding-bottom: 30px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid $sidebarActiveTab;
+    }
+  }
+
+  &__link {
+    @include universal-flex(flex, row, unset, center);
+
+    &--active {
+      color: $sidebarActiveTab;
+    }
+  }
+
+  &__link-text {
+    margin-left: 12px;
+    @include base-font-style(16px, 400, 20px, $sidebarTextColor);
+    text-align: center;
+    transition: color 0.3s linear;
+
+    &:hover {
+      color: $sidebarActiveTab;
+    }
+  }
+}
+
+.main {
+  padding: 35px 30px 0;
+
+  &__bottom-blocks {
+    margin-top: 30px;
+  }
+}
+
+.header {
+  @include universal-flex(flex, row, space-between, center);
+
+  &__title {
+    @include base-font-style($mainHeader, 700, 30px, $mainDarkTextColor);
+  }
+
+  &__details-container {
+    @include universal-flex(flex, row, space-between, center);
+  }
+
+  &__icon {
+    display: block;
+    margin-right: 28px;
+  }
+
+  &__user-details {
+    @include universal-flex(flex, row, space-between, center);
+  }
+
+  &__line {
+    width: 1px;
+    height: 32px;
+    margin-right: 32px;
+    background-color: $sidebarActiveTab;
+  }
+
+  &__user-name {
+    margin-right: 15px;
+    @include base-font-style($tableMainText, 600, 20px, $mainDarkTextColor);
+  }
+}
+
+.tabs {
+  padding: 60px 0 40px;
+  @include universal-flex(flex, row, space-between, center);
+
+  &__item {
+    padding: 24px 32px;
+    width: 252px;
+    height: 134px;
+    @include universal-flex(flex, column, center, center);
+    border: 1px solid $sidebarActiveTab;
+    border-radius: 8px;
+
+    &--active {
+      border-color: $brandColor;
+    }
+  }
+
+  &__text {
+    margin-bottom: 12px;
+    @include base-font-style($secondaryHeader, 700, 24px, $lightGreyTextColor);
+
+    &--active {
+      color: $brandColor;
+    }
+  }
+
+  &__number {
+    @include base-font-style($numbers, 700, 50px, $mainDarkTextColor);
+
+    &--active {
+      color: $brandColor;
+    }
+  }
+}
+
+.users {
+  border: 1px solid $borderColor;
+  border-radius: 8px;
+
+  &__table {
+    width: 100%;
+  }
+
+  &__header {
+    @include universal-flex(flex, row, space-between, center);
+    padding: 32px;
+    margin-bottom: 50px;
+  }
+
+  &__title {
+    @include base-font-style($secondaryHeader, 700, 24px, $mainDarkTextColor);
+  }
+
+  &__sorting {
+    @include universal-flex(flex, row, unset, center);
+  }
+
+  &__header-text {
+    margin-left: 10px;
+    @include base-font-style($tableMainText, 600, 20px, $mainDarkTextColor);
+  }
+}
+
+.table {
+  border-collapse: collapse;
+
+  &__head {
+    @include base-font-style($tableMainText, 700, 18px, $lightGreyTextColor);
+    letter-spacing: .2px;
+  }
+
+  &__row {
+    text-align: left;
+    border-bottom: 1px solid $borderColor;
+  }
+
+  &__header {
+    padding: 0 32px 12px;
+  }
+}
+
+.row {
+  border-bottom: 1px solid $borderColor;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &__item {
+    padding: 24px 32px;
+
+    &--wide {
+      width: 35%;
+    }
+  }
+
+  &__profile {
+    @include universal-flex(flex, row, unset, center);
+  }
+
+  &__profile-details {
+    margin-left: 24px;
+  }
+
+  &__profile-name {
+    display: block;
+    @include base-font-style($tableMainText, 600, 20px, $mainDarkTextColor);
+    letter-spacing: .2px;
+    margin-bottom: 4px;
+  }
+
+  &__profile-description {
+    @include base-font-style($tableSmallText, 400, 16px, $smallTextColor);
+  }
+}
+
+.btn {
+  padding: 5px 12px;
+  @include base-font-style($btnText, 700, 14px, #fff);
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  border: none;
+  border-radius: 100px;
+
+  &--high {
+    background-color: $highBtnColor;
+  }
+
+  &--low {
+    background-color: $lowBtnColor;
+  }
+
+  &--normal {
+    background-color: $normalBtnColor;
+  }
+
+  &--plus {
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 16px;
+    color: $lightGreyTextColor;
+  }
+
+  &--default {
+    background-color: #f0f1f7;
+    color: $lightGreyTextColor;
+  }
+}
+
+.bottom-blocks {
+  @include universal-flex(flex, row, unset, unset);
+
+  &__tickets {
+    width: 100%;
+
+    &:first-child {
+      margin-right: 30px;
+    }
+  }
+}
+
+.tickets {
+  border: 1px solid $borderColor;
+  border-radius: 8px;
+
+  &__header {
+    padding: 32px 32px 0;
+    margin-bottom: 16px;
+    @include universal-flex(flex, row, space-between, unset);
+  }
+
+  &__title {
+    margin-bottom: 8px;
+    @include base-font-style($secondaryHeader, 700, 24px, $mainDarkTextColor);
+    letter-spacing: .4px;
+  }
+
+  &__description {
+    @include base-font-style($tableSmallText, 400, 16px, $lightGreyTextColor);
+    letter-spacing: .1px;
+
+    &--black {
+      color: $mainDarkTextColor;
+    }
+  }
+
+  &__link {
+    @include base-font-style($tableMainText, 600, 20px, $brandColor);
+    letter-spacing: .2px;
+  }
+
+  &__item {
+    padding: 20px 32px;
+    @include universal-flex(flex, row, space-between, center);
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $borderColor;
+    }
+  }
+
+  &__item-text {
+    @include base-font-style($tableMainText, 600, 20px, $mainDarkTextColor);
+    letter-spacing: .2px;
+
+    &--lighter {
+      color: $smallTextColor;
+    }
+  }
+
+  &__item-amount {
+    @include base-font-style($tableMainText, 600, 20px, $lightGreyTextColor);
+  }
 }
