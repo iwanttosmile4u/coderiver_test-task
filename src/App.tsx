@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { HashRouter, Route, Routes } from 'react-router-dom';
 import './App.scss';
 import { Navigation } from './components/navigation/Navigation';
 import { Header } from './components/header/Header';
@@ -9,7 +9,7 @@ import { Filters } from './components/users-page/filters/Filters';
 
 export const App: React.FC = () => {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <div className="app">
         <Navigation />
         <main className="main body__main">
@@ -21,6 +21,6 @@ export const App: React.FC = () => {
           </Routes>
         </main>
       </div>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
