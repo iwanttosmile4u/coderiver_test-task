@@ -15,17 +15,26 @@ export const Tasks: React.FC = () => (
     </div>
 
     <div className="tickets__item">
-      <span className="tickets__item-text">Awaiting Developer Fix</span>
+      <label htmlFor="checkbox" className="checkbox-label">
+        <input id="checkbox" type="checkbox" className="input-checkbox" />
+        Finish ticket update
+      </label>
       <button type="button" className="btn btn--low">Urgent</button>
     </div>
 
     <div className="tickets__item">
-      <span className="tickets__item-text">Awaiting Developer Fix</span>
+      <label htmlFor="checkbox" className="checkbox-label">
+        <input id="checkbox" type="checkbox" className="input-checkbox" />
+        Create new ticket example
+      </label>
       <button type="button" className="btn btn--normal">new</button>
     </div>
 
     <div className="tickets__item">
-      <span className="tickets__item-text">Pending</span>
+      <label htmlFor="checkbox" className="checkbox-label">
+        <input checked id="checkbox" type="checkbox" className="input-checkbox" />
+        Update ticket report
+      </label>
       <button type="button" className="btn btn--default">default</button>
     </div>
   </div>

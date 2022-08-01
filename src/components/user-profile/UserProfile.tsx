@@ -20,8 +20,8 @@ export const UserProfile: React.FC = () => {
       <div className="profile__background">
         <div className="profile__background-image" />
         <img src={`images/users-photos/user-${user?.id}.png`} alt={user?.name} className="profile__avatar" />
-        <h3>{user?.name}</h3>
-        <h4>{user?.company.catchPhrase}</h4>
+        <h3 className="profile__user-name">{user?.name}</h3>
+        <h4 className="profile__user-description">{user?.company.catchPhrase}</h4>
       </div>
       <div className="profile__info">
         <h3 className="profile__info-title">Address</h3>

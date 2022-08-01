@@ -336,6 +336,15 @@
   }
 }
 
+.input-checkbox {
+  margin-right: 15px;
+}
+
+.checkbox-label {
+  @include base-font-style($tableMainText, 600, 20px, $mainDarkTextColor);
+  @include universal-flex(flex, row, unset, center);
+}
+
 .profile {
   margin-bottom: 230px;
   border: 1px solid $borderColor;
@@ -361,8 +370,17 @@
     top: 340px;
   }
 
+  &__user-name {
+    margin-top: 95px;
+    @include base-font-style(36px, 700, 45px, $mainDarkTextColor);
+  }
+
+  &__user-description {
+    @include base-font-style($mainHeader, 700, 24px, #797A84);
+  }
+
   &__info {
-    margin: 90px auto 130px 50px;
+    margin: 60px auto 130px 50px;
   }
 
   &__info-title {
